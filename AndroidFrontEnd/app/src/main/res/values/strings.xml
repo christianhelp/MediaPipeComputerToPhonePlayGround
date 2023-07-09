@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pls work:)</string>
+    <string name="GET_RESPONSE">Results of request will appear here!</string>
+    <string name="changed">%s</string>
+</resources>
