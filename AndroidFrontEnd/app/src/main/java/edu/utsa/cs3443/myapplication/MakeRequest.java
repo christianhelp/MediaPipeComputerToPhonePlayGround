@@ -1,8 +1,7 @@
 package edu.utsa.cs3443.myapplication;
 
-import java.io.BufferedInputStream;
+
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -39,8 +38,13 @@ public class MakeRequest{
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 //Specifies what kind of method this will be
                 con.setRequestMethod("GET");
+
+                //con.setConnectTimeout(10000);
+                //con.setReadTimeout(10000);
+
                 //Checks if connection went with an HTTP_OK (200) or not.
                 if (con.getResponseCode() == HttpURLConnection.HTTP_OK){
+                    System.out.println("YES!");
                    BufferedReader bf = new BufferedReader(new InputStreamReader(con.getInputStream()));
                    String input;
                    StringBuilder content = new StringBuilder();

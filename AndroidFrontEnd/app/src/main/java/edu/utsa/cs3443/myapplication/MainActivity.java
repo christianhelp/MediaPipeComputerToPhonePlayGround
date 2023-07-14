@@ -16,14 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Tie our button and textview to their respectice IDs
+        // Tie our button and textview to their respective IDs
         getResults = findViewById(R.id.GET_RESULTS);
         Button requestButton = findViewById(R.id.requestButton);
         // Inits out makerequest object
         // You will notice that the IP is hardcoded and looks a bit odd. This is our local machine's IP.
-        // Using the normal 'http://127.0.0.1:5000' will not work as that will only work with making connections within the machine itself.
-        // If we want our phones to connect to the server, we need to change the ip to connect to the URL below
-        MakeRequest makeRequest = new MakeRequest(this,"http://192.168.86.20:5000/stream");
+        // Using the normal 'http://127.0.0.1:5000' will not work as that refer to the emulator itself, use the ip 10.0.2.2 for the ip
+
+        // If we want our phones to connect to the server, we need to change the ip to connect to a special port (check server's value of 0.0.0.0)
+        MakeRequest makeRequest = new MakeRequest(this,"http://192.168.86.20:5000/");
 
         // Made a little inline function for our button's onclick function and made it a lambda for style points.
         // All this does is tell the user that a connection is being attempted and afterwards, the text above the button will update showing a result.
